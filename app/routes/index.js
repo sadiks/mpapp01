@@ -24,15 +24,30 @@ export default Route.extend({
     //     return companies;
     // }
   model: function() {
-    return {
-        name: "Ravi Kumar",
-        avatar: "https://randomuser.me/api/portraits/thumb/lego/3.jpg",
-        bio: "Famous painter"
-    };
+    // return {
+    //     name: "Ravi Kumar",
+    //     avatar: "https://randomuser.me/api/portraits/thumb/lego/3.jpg",
+    //     bio: "Famous painter"
+    // };
+    let questions =[{
+        id:0,
+        question:"Do you like Ember",
+        answer:"Yes",
+        image:"https://randomuser.me/api/portraits/thumb/lego/3.jpg",
+        submited:"first user"
+    },{
+        id:1,
+        question:"is Ember good?",
+        answer:"Yes",
+        image:"https://randomuser.me/api/portraits/thumb/lego/3.jpg",
+        submited:"second user"
+    }];
+    return questions;
   },
-  action: {
-    newAction: function() {            
-        console.log('TTTT');
+  actions: {
+    newAction: function(id) {            
+        console.log('TTTT'+id);
+        this.transitionTo("question",id);
     }
   }
 });

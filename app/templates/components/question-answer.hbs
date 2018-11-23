@@ -1,0 +1,39 @@
+{{yield}}
+
+<style>
+    .question-answer{
+        float: left;
+        width: 200px;
+        border: 2px solid;
+        margin: 0 0 0 10px;
+        border-radius: 2px;
+        cursor: pointer;       
+    }
+    .question-answer span{
+        width: 100%;
+        float: left;
+        text-align: center;
+        padding: 5px;
+    }
+</style>
+<div id="container">
+    {{#if questionAnswer}}
+        {{#each questionAnswer as |qa|}}
+            <div class="question-answer" {{action "gettingId" qa.id}}>
+                <span><img src={{qa.image}}></span>
+                <span>{{qa.question}}</span>
+                {{!-- <span>{{qa.answer}}</span> --}}
+                <span>Submitted By {{qa.submited}}</span>
+            </div>
+        {{/each}}
+    {{/if}}
+    {{#if answer}}
+    {{log answer}}
+        <div class="question-answer">
+            <span><img src={{answer.image}}></span>
+            <span>{{qa.question}}</span>
+            <span>Answer By {{answer.answer}}</span>
+            <span>Submitted By {{answer.submited}}</span>
+        </div>
+    {{/if}}
+</div>

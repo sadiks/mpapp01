@@ -4,6 +4,12 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'mpapp01',
     environment,
+    firebase: {
+      apiKey: "AIzaSyDAGRCK-onkm3z8exB0j7voGextzedDrvk",
+      authDomain: "answer-board.firebaseapp.com",
+      databaseURL: "https://answer-board.firebaseio.com",
+      storageBucket: "answer-board.appspot.com",
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

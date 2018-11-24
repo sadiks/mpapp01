@@ -23,7 +23,8 @@ Router.map(function() {
       this.route('book',{path: "/:id"});
       this.route('new');
     });
-    this.route("question",{ path: "/:id" });
+    // this.route("question",{ path: "/:id" });
+    this.route('question', {path: '/question/:question_id'});
 });
 
 export default Router;
